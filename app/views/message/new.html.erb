@@ -1,0 +1,11 @@
+<%= form_for @message, :url => {:controller => "message", :action => "create" } do |f| %>
+
+<input type='hidden' value="192" data-init-text='Bla bla' name='input' id='test' style="width:300px;"/>
+
+  
+  <%= f.text_field :title %>
+  <%= f.text_area :content, :class => 'ckeditor' , :size => "60x12" %>  
+  <%= f.collection_select :category_id, Category.all, :id, :name %>
+  <%= f.submit "Create" %>
+<% end %>
+<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
